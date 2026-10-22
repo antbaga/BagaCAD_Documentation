@@ -1,0 +1,21 @@
+site_name: BagaCAD
+site_description: Quick documentation for BagaCAD, a direct drawing tool for Blender.
+site_url: https://antbaga.github.io/BagaCAD_Documentation/
+repo_url: https://github.com/antbaga/BagaCAD_Documentation
+edit_uri: edit/main/docs/
+theme:
+  name: readthedocs
+  highlightjs: false
+nav:
+  - Start here: index.md
+  - Draw: draw.md
+  - Extrude: extrude.md
+  - Dimensions: dimensions.md
+  - Guides & grid: guides-grid.md
+  - Shortcuts & settings: shortcuts.md
+plugins:
+  - search
+markdown_extensions:
+  - tables
+extra_css:
+  - stylesheets/extra.css
