@@ -1,0 +1,10 @@
+/* Keep the standard documentation layout, with a quiet neutral palette. */
+.wy-side-nav-search { background: #30383b; }
+.wy-nav-top { background: #30383b; }
+.wy-nav-content { max-width: 960px; }
+a { color: #24646a; }
+h1, h2, h3 { font-family: inherit; }
+.wy-table-responsive table td { white-space: normal; }
+@media (max-width: 768px) {
+  .wy-nav-content { padding: 1.4em; }
+}
