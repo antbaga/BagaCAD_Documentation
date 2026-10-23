@@ -48,7 +48,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#faces">Faces</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#undo-and-finish">Undo and finish</a>
+    <li class="toctree-l2"><a class="reference internal" href="#navigation">Navigation</a>
     </li>
     </ul>
                 </li>
@@ -94,26 +94,101 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="draw">Draw</h1>
-<p>Click to place a start point, then click to add segments. Right-click to start a new chain.</p>
-<p><strong>On a face:</strong> use <strong>Ctrl + click</strong>, away from guides, to start drawing instead of extruding.</p>
+<p>Place a start point, then add segments. On a face, hold Ctrl when clicking to draw instead of extruding; keep away from a guide handle.</p>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left click</td>
+<td>Place the start point or confirm the next segment</td>
+</tr>
+<tr>
+<td>Right click</td>
+<td>Start a new chain</td>
+</tr>
+<tr>
+<td>Ctrl + click inside a face</td>
+<td>Start drawing on the face</td>
+</tr>
+<tr>
+<td>X / Y / Z</td>
+<td>Lock the corresponding axis; press again to release</td>
+</tr>
+<tr>
+<td>Shift + X / Y / Z</td>
+<td>Lock to YZ / XZ / XY; press again to release</td>
+</tr>
+<tr>
+<td>Type digits</td>
+<td>Set the active length or angle value</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>Switch between length and angle input</td>
+</tr>
+<tr>
+<td>Click / Enter</td>
+<td>Confirm the segment</td>
+</tr>
+<tr>
+<td>Backspace</td>
+<td>Delete a digit; outside input, cancel the unfinished chain</td>
+</tr>
+<tr>
+<td>Ctrl, held</td>
+<td>Disable mesh, grid and guide snapping; release to restore snapping</td>
+</tr>
+<tr>
+<td>Ctrl + Z</td>
+<td>Undo a validated edit; discard any unfinished guide/grid setup first</td>
+</tr>
+<tr>
+<td>Esc</td>
+<td>Clear input, setup or selection; otherwise finish the tool</td>
+</tr>
+<tr>
+<td>Enter without input or selection</td>
+<td>Finish the tool</td>
+</tr>
+</tbody>
+</table>
 <h2 id="precision">Precision</h2>
-<ul>
-<li><strong>X / Y / Z:</strong> lock an axis. Press again to release.</li>
-<li><strong>Shift + X / Y / Z:</strong> lock to YZ / XZ / XY while drawing. Press again to release.</li>
-<li>Type a length, press <strong>Tab</strong>, then type an angle. Tab switches between the two fields.</li>
-<li><strong>Click / Enter:</strong> confirm the typed segment.</li>
-<li><strong>Backspace:</strong> correct the input. <strong>Esc:</strong> clear it.</li>
-</ul>
-<p>A length fixes the distance but lets the direction follow the mouse. An angle fixes the angle but lets the length change. Enter both to fix both.</p>
-<p>Snap targets include vertices, midpoints, edges, faces, guides and grid nodes. With a fixed length, aiming at a snap target chooses the direction while keeping that length.</p>
-<p>Hold <strong>Alt</strong> to suspend automatic inferences; mesh and grid snaps remain available.</p>
+<p>A typed length fixes distance while the direction follows the mouse. A typed angle fixes the angle while the length changes. Enter both to fix both. Tab alone selects a field without locking it.</p>
+<p>Drawing snapping is on by default. Hold Ctrl to disable it; release Ctrl to restore it. Explicit axis/plane locks and typed dimensions stay active without Ctrl. Hovering can still acquire construction guides and temporary references.</p>
+<p>Snap targets include vertices, midpoints, edges, faces, construction guides and grid nodes. With a fixed length, any snap target can choose the direction; the segment keeps its entered length. Displayed measurements follow the scene units. Drawing input uses Blender units; angles use degrees.</p>
+<p>In empty space, free drawing uses a view-parallel plane at the 3D cursor depth when no snap or grid plane applies.</p>
 <h2 id="faces">Faces</h2>
 <p>Close a flat contour to fill it. Draw between face borders to cut a face. Crossings split edges; overlapping segments merge.</p>
 <p>To fill a missing flat region, retrace one of its border edges. Existing coplanar faces are not covered. A diagonal across an empty square can fill both sides.</p>
-<h2 id="undo-and-finish">Undo and finish</h2>
-<p><strong>Ctrl + Z</strong> undoes a validated change; during a guide transformation it cancels the preview. <strong>Backspace</strong>, outside numeric input, also undoes the last geometry change.</p>
-<p><strong>Esc</strong> cancels the current setup/input or selection, otherwise exits the tool. <strong>Enter</strong>, with no input or selection pending, also exits.</p>
-<p>Orbit, pan and zoom remain available. The numpad enters numbers during a segment; before the first point it keeps its view shortcuts.</p>
+<h2 id="navigation">Navigation</h2>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Middle mouse / Shift + middle mouse / wheel</td>
+<td>Orbit / pan / zoom with the default Blender keymap</td>
+</tr>
+<tr>
+<td>Numpad during a segment</td>
+<td>Enter numbers</td>
+</tr>
+<tr>
+<td>Numpad before the first point</td>
+<td>Use Blender view shortcuts</td>
+</tr>
+</tbody>
+</table>
+<p>BagaCAD shortcuts can be changed in the <a href="../shortcuts/">preferences</a>; navigation uses Blender's keymap.</p>
               
             </div>
           </div><footer>

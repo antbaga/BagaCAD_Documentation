@@ -42,7 +42,7 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#install">Install</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#start-drawing">Start drawing</a>
+    <li class="toctree-l2"><a class="reference internal" href="#start">Start</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#scope">Scope</a>
     </li>
@@ -94,26 +94,48 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="bagacad">BagaCAD</h1>
-<p>Draw edges, close faces and extrude directly in Blender.</p>
-<p><strong>0.22 Alpha · Blender 5.2+</strong></p>
-<p>This is a short working manual. The addon is still in development; save a copy before testing.</p>
+<p>Draw edges, close faces, extrude and edit dimensions directly in Blender.</p>
+<p><strong>0.22 Alpha · Blender 5.0+</strong></p>
 <h2 id="install">Install</h2>
-<ol>
-<li>Open <strong>Edit &gt; Preferences &gt; Get Extensions</strong>.</li>
-<li>Use the menu &gt; <strong>Install from Disk…</strong> and select the BagaCAD ZIP.</li>
-<li>Enable the extension. Disable older development copies first.</li>
-</ol>
-<h2 id="start-drawing">Start drawing</h2>
-<ul>
-<li><strong>F3 &gt; BagaCAD New Drawing</strong> creates an empty mesh.</li>
-<li><strong>F3 &gt; BagaCAD Draw</strong> works on the active mesh.</li>
-<li>Both commands are also in <strong>N &gt; BagaCAD</strong>.</li>
-</ul>
-<p>Click points to draw. Close a flat contour to make a face. Right-click to start another chain. The viewport header shows the current action.</p>
-<p><a href="draw/">Drawing</a> · <a href="extrude/">Extrusion</a> · <a href="dimensions/">Dimensions</a> · <a href="shortcuts/">Shortcuts</a></p>
+<p>Drag the BagaCAD extension <strong>ZIP</strong> from your file browser into Blender, then confirm installation. Keep the ZIP intact; enable BagaCAD if prompted. Disable older development copies first.</p>
+<p>You can also use <strong>Edit &gt; Preferences &gt; Get Extensions &gt; menu &gt; Install from Disk…</strong>. Both methods are described in the <a href="https://docs.blender.org/manual/en/5.0/editors/preferences/extensions.html">Blender manual</a>.</p>
+<h2 id="start">Start</h2>
+<p>Open the 3D Viewport sidebar with <strong>N</strong>, then select <strong>BagaCAD</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Click <strong>Draw</strong> in the panel</td>
+<td>Draw on the active mesh; create an empty mesh if no mesh is active</td>
+</tr>
+<tr>
+<td>Click <strong>Dimensions</strong> in the panel</td>
+<td>Start directly in dimension editing on the active mesh</td>
+</tr>
+<tr>
+<td>F3 &gt; BagaCAD New Drawing</td>
+<td>Create an empty mesh and start drawing</td>
+</tr>
+<tr>
+<td>F3 &gt; BagaCAD Draw</td>
+<td>Start drawing on the active mesh</td>
+</tr>
+<tr>
+<td>Click <strong>Documentation</strong> in the panel</td>
+<td>Open this manual</td>
+</tr>
+</tbody>
+</table>
+<p>Click points to draw. Close a flat contour to make a face. The viewport header shows the current action. The Dimensions button needs an active mesh.</p>
+<p><a href="draw/">Draw</a> · <a href="guides-grid/">Guides &amp; grid</a> · <a href="extrude/">Extrude</a> · <a href="dimensions/">Dimensions</a> · <a href="shortcuts/">Shortcuts &amp; settings</a></p>
 <h2 id="scope">Scope</h2>
 <p>BagaCAD edits the active mesh. Other objects can hide snap targets but are not themselves snap targets. Hidden mesh elements are ignored. X-Ray and Wireframe allow snapping to revealed geometry.</p>
-<p>Non-planar contours stay open. Complex geometry is not guaranteed to work. Dimensions and their locks are temporary tool data, not a persistent CAD constraint system.</p>
+<p>Non-planar contours stay open. Dimensions and their locks are temporary tool data, not a persistent CAD constraint system. This alpha is still in development.</p>
               
             </div>
           </div><footer>
@@ -166,5 +188,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-10-22 15:48:27.125467+00:00
+Build Date UTC : 2026-10-23 09:19:34.149373+00:00
 -->

@@ -60,6 +60,12 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Shortcuts & settings</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#main-actions">Main actions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#construction-references">Construction references</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dimensions">Dimensions</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#preferences">Preferences</a>
     </li>
     </ul>
@@ -90,96 +96,182 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="shortcuts-settings">Shortcuts &amp; settings</h1>
-<p>These are the current defaults, not the proposed future keymap.</p>
+<p>The tables show the <strong>default bindings</strong>. Customize them in <strong>Edit &gt; Preferences &gt; Add-ons &gt; BagaCAD</strong>. The header and sidebar reminders follow your settings.</p>
+<h2 id="main-actions">Main actions</h2>
 <table>
 <thead>
 <tr>
+<th>Key or gesture</th>
 <th>Action</th>
-<th>Shortcut</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Draw / confirm / extrude a hovered face</td>
-<td>Left click, depending on context</td>
+<td>Left click</td>
+<td>Draw / confirm / extrude a hovered face, depending on context</td>
 </tr>
 <tr>
+<td>Ctrl + click away from guides</td>
 <td>Draw on a face</td>
-<td>Ctrl + click, away from guides</td>
 </tr>
 <tr>
-<td>Select extrusion faces</td>
-<td>Shift + click</td>
+<td>Shift + click on a face</td>
+<td>Add / remove it from the extrusion selection</td>
 </tr>
 <tr>
+<td>Alt + click on a face</td>
 <td>Extrude connected coplanar faces</td>
-<td>Alt + click</td>
 </tr>
 <tr>
-<td>New drawing chain / cancel preview</td>
 <td>Right click</td>
+<td>New chain / cancel preview / deselect, depending on context</td>
 </tr>
 <tr>
-<td>Dimensions / return to drawing</td>
-<td>D, outside input</td>
+<td>D outside input</td>
+<td>Switch Draw / Dimensions</td>
 </tr>
 <tr>
-<td>Axis lock</td>
 <td>X / Y / Z</td>
+<td>Lock an axis</td>
 </tr>
 <tr>
-<td>Plane lock while drawing</td>
-<td>Shift + X / Y / Z</td>
+<td>Shift + X / Y / Z during drawing</td>
+<td>Lock YZ / XZ / XY</td>
 </tr>
 <tr>
-<td>Length / angle input</td>
-<td>Tab</td>
+<td>Tab while drawing</td>
+<td>Switch length / angle input</td>
 </tr>
 <tr>
-<td>Undo geometry</td>
 <td>Ctrl + Z</td>
+<td>Cancel an active preview, otherwise undo the last validated edit, including extrusion</td>
 </tr>
 <tr>
-<td>Delete digit / undo geometry outside input</td>
 <td>Backspace</td>
+<td>Delete a digit or cancel the current step; keep validated geometry</td>
 </tr>
 <tr>
-<td>Cancel current input/setup, otherwise finish</td>
 <td>Esc</td>
+<td>Cancel input/setup/selection, otherwise finish</td>
 </tr>
 <tr>
-<td>Confirm input/selection, otherwise finish</td>
 <td>Enter</td>
+<td>Confirm input/selection, otherwise finish</td>
 </tr>
 <tr>
-<td>Suspend drawing inferences</td>
-<td>Hold Alt</td>
+<td>Hold Ctrl while drawing</td>
+<td>Disable snapping while held; enabled by default</td>
 </tr>
 <tr>
-<td>Grid</td>
-<td>G; Shift/Ctrl/Alt + G for setup</td>
+<td>Hold Ctrl while extruding</td>
+<td>Enable snapping while held; disabled by default</td>
+</tr>
+</tbody>
+</table>
+<h2 id="construction-references">Construction references</h2>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hover a vertex / midpoint for 2 s</td>
+<td>Add an XYZ guide</td>
 </tr>
 <tr>
-<td>Guide through two vertices</td>
-<td>A, then click</td>
+<td>Hover an edge interior for 2 s</td>
+<td>Add an edge guide</td>
 </tr>
 <tr>
-<td>Move guide / rotate XYZ reference</td>
-<td>Hold Ctrl / hold Shift over guide</td>
+<td>Hover a vertex / guide intersection for 0.15 s</td>
+<td>Acquire a temporary reference point</td>
 </tr>
 <tr>
-<td>Remove last guide / all guides</td>
+<td>A on a vertex, then click another</td>
+<td>Add a guide through the two vertices</td>
+</tr>
+<tr>
+<td>Hold Ctrl + Alt over a guide</td>
+<td>Move it</td>
+</tr>
+<tr>
+<td>Hold Shift over an XYZ axis</td>
+<td>Rotate that reference</td>
+</tr>
+<tr>
 <td>R / Shift + R</td>
+<td>Remove last guide / clear guides and temporary points; preserve grid</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Show / hide the grid</td>
+</tr>
+<tr>
+<td>Shift + G</td>
+<td>Reposition / reorient the grid</td>
+</tr>
+<tr>
+<td>Ctrl + G</td>
+<td>Set cell size</td>
+</tr>
+<tr>
+<td>Alt + G</td>
+<td>Align grid to a face</td>
+</tr>
+<tr>
+<td>G during direction setup / Ctrl at second click</td>
+<td>Use direction-segment length as cell size</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dimensions">Dimensions</h2>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Click / drag a value</td>
+<td>Type / adjust it</td>
+</tr>
+<tr>
+<td>Ctrl while dragging</td>
+<td>Use rounding increments</td>
+</tr>
+<tr>
+<td>Shift while dragging</td>
+<td>Use fine adjustment</td>
+</tr>
+<tr>
+<td>Tab outside input / click support icon</td>
+<td>Switch fixed endpoint</td>
+</tr>
+<tr>
+<td>Hover a value, then click its padlock</td>
+<td>Toggle the dimension lock</td>
+</tr>
+<tr>
+<td>Ctrl + A / Ctrl + V during input</td>
+<td>Select all / paste</td>
+</tr>
+<tr>
+<td>D / Esc outside input</td>
+<td>Return to Draw</td>
 </tr>
 </tbody>
 </table>
 <h2 id="preferences">Preferences</h2>
-<p>Open <strong>Edit &gt; Preferences &gt; Add-ons &gt; BagaCAD</strong>.</p>
 <table>
 <thead>
 <tr>
 <th>Setting</th>
-<th>Default in the current source</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
@@ -213,8 +305,10 @@
 </tr>
 </tbody>
 </table>
-<p>The length and angle increments apply to Ctrl-dragging dimensions. <strong>Display Text</strong> controls labels near the cursor. Leave <strong>Debug Mode</strong> off for normal use.</p>
-<p>Saved preferences can differ from these defaults. Hover delays are already editable; a complete custom keymap editor is not implemented in this version.</p>
+<p>The length and angle increments apply only to Ctrl-dragging dimensions. <strong>Display Text</strong> controls labels near the cursor.</p>
+<p>Shortcut rows configure keys and modifiers. Shared input keys configure picking, confirmation, cancellation and text correction. Hold modifiers configure related gestures together; use a different modifier for each row. Red rows flag conflicting bindings. Right-click a setting to reset it to its default.</p>
+<p>Saved preferences can differ from these defaults. Digits, decimal separators and minus remain numeric input. View navigation follows Blender's own keymap.</p>
+<p>The viewport header changes with the current step: start point, segment input, face selection, extrusion, guide edit, grid setup or dimension edit. It displays the configured bindings. Ctrl disables drawing snaps but enables extrusion snaps while held; Ctrl + Alt moves a guide.</p>
               
             </div>
           </div><footer>

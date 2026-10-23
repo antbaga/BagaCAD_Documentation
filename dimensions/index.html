@@ -56,7 +56,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#fixed-end-and-locks">Fixed end and locks</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#return-to-drawing">Return to drawing</a>
+    <li class="toctree-l2"><a class="reference internal" href="#undo-and-return">Undo and return</a>
     </li>
     </ul>
                 </li>
@@ -94,24 +94,124 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="dimensions">Dimensions</h1>
-<p>Press <strong>D</strong>, then click an edge. A single selected or active edge may be picked automatically.</p>
-<p>Labels show the edge length, nearby parallel distances and angles.</p>
+<p>Click <strong>Dimensions</strong> in <strong>N &gt; BagaCAD</strong>, or press <strong>D</strong> while drawing, then select an edge. A single selected or active edge may be picked automatically.</p>
+<p>Labels show the edge length, nearby parallel distances and angles. Lengths follow the scene units; angles use degrees.</p>
 <h2 id="change-a-value">Change a value</h2>
-<ul>
-<li><strong>Click a label:</strong> type a replacement.</li>
-<li><strong>Drag a label horizontally:</strong> adjust the value.</li>
-<li><strong>Ctrl while dragging:</strong> use increments.</li>
-<li><strong>Shift while dragging:</strong> move ten times more finely.</li>
-<li><strong>Enter / click:</strong> confirm typed input. Releasing a drag confirms it.</li>
-<li><strong>Esc / right-click:</strong> cancel the edit.</li>
-</ul>
-<p><strong>Ctrl + A</strong> replaces the whole value; <strong>Ctrl + V</strong> pastes. Lengths accept units such as <code>mm</code>, <code>cm</code>, <code>m</code>, <code>ft</code> and <code>in</code>. Angles use degrees.</p>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Click an edge</td>
+<td>Select the edge to measure and edit</td>
+</tr>
+<tr>
+<td>Click a value</td>
+<td>Highlight it in blue and type a replacement</td>
+</tr>
+<tr>
+<td>Drag a value left / right</td>
+<td>Decrease / increase it</td>
+</tr>
+<tr>
+<td>Release the drag</td>
+<td>Confirm the change</td>
+</tr>
+<tr>
+<td>Ctrl while dragging</td>
+<td>Use the configured length or angle increments</td>
+</tr>
+<tr>
+<td>Shift while dragging</td>
+<td>Adjust ten times more finely</td>
+</tr>
+<tr>
+<td>Enter / click during input</td>
+<td>Confirm typed input</td>
+</tr>
+<tr>
+<td>Esc / right click during input</td>
+<td>Cancel the edit</td>
+</tr>
+<tr>
+<td>Ctrl + A during input</td>
+<td>Select the whole value</td>
+</tr>
+<tr>
+<td>Ctrl + V during input</td>
+<td>Paste a value</td>
+</tr>
+<tr>
+<td>Backspace during input</td>
+<td>Delete a character</td>
+</tr>
+</tbody>
+</table>
+<p>Lengths accept units such as <code>mm</code>, <code>cm</code>, <code>m</code>, <code>ft</code> and <code>in</code>. Angles accept values from −360° to 360°. Typed values do not use drag rounding.</p>
 <h2 id="fixed-end-and-locks">Fixed end and locks</h2>
-<p>Outside input, press <strong>Tab</strong> or click the support icon to switch the fixed endpoint.</p>
-<p>Hover a value to reveal its padlock. Click it to lock or unlock that dimension. Locked values are kept while neighboring geometry adjusts. If constraints conflict, cancel or unlock a value.</p>
-<p>Locks last only while Dimensions is active. Leaving this mode clears them.</p>
-<h2 id="return-to-drawing">Return to drawing</h2>
-<p><strong>D / Esc</strong>, outside input, returns to drawing. Right-click deselects the edge. <strong>Ctrl + Z</strong> or <strong>Backspace</strong>, outside input, undoes a validated change.</p>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tab outside input / click the support icon</td>
+<td>Switch the fixed endpoint</td>
+</tr>
+<tr>
+<td>Hover a value</td>
+<td>Reveal its padlock</td>
+</tr>
+<tr>
+<td>Click the padlock</td>
+<td>Lock / unlock that dimension</td>
+</tr>
+</tbody>
+</table>
+<p>A length edit moves the free endpoint along the edge. A parallel distance edit translates the edge. Angle edits try to slide connected endpoints along neighboring directions, changing the edited length when needed to limit distortion.</p>
+<p>Locked values are kept while neighboring geometry adjusts. If constraints conflict, cancel or unlock a value. Locks last only while Dimensions is active; leaving the mode clears them.</p>
+<h2 id="undo-and-return">Undo and return</h2>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + Z during input or a drag</td>
+<td>Cancel the current preview</td>
+</tr>
+<tr>
+<td>Ctrl + Z outside input</td>
+<td>Undo a validated change</td>
+</tr>
+<tr>
+<td>Backspace outside input</td>
+<td>Deselect the edge</td>
+</tr>
+<tr>
+<td>Backspace during a drag</td>
+<td>Cancel the preview</td>
+</tr>
+<tr>
+<td>Right click outside input</td>
+<td>Deselect the edge</td>
+</tr>
+<tr>
+<td>D / Esc outside input</td>
+<td>Return to drawing</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div><footer>
