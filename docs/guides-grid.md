@@ -13,8 +13,9 @@ Guides stay available between segments during the active tool session. They are 
 | Hover a vertex or edge midpoint for 2 s | Add an XYZ construction guide |
 | Hover an edge away from its midpoint and ends for 2 s | Add an infinite guide along that edge |
 | A on a vertex, then click another vertex | Add a guide through both vertices |
-| Hold Ctrl + Alt over a guide, then move | Move the guide; release to confirm |
+| Hold Alt over a guide, then move | Move the guide; release to confirm |
 | Hold Shift over an XYZ axis, then aim | Rotate the whole XYZ reference around its fixed origin; release to confirm |
+| X / Y / Z while holding Shift to rotate XYZ | Lock rotation around that initial local guide axis; repeat to unlock |
 | Esc / right click during a transformation | Cancel the preview |
 | R | Remove the last XYZ or edge guide |
 | Shift + R | Clear XYZ/edge guides and temporary references; the grid is unchanged |
@@ -54,3 +55,7 @@ G normally hides the grid; during direction setup it controls the cell-size opti
 The grid snaps only to line intersections, not cell centers or side midpoints. Its default step is 0.1 Blender unit. Mesh, guide and temporary-reference snaps remain available with the grid active.
 
 While drawing, snapping to these references and grid nodes is enabled by default. Hold Ctrl to disable snapping; the grid remains a drawing plane without rounding to nodes. Grid setup and guide editing keep their own point picking.
+
+During an XYZ rotation, X/Y/Z refer to the guide frame at the start of the gesture, including tilted guides. The origin and the selected rotation axis stay fixed; all three axes rotate together. If the grabbed axis is itself the rotation axis, the next local axis supplies the aiming direction. A target on the rotation axis leaves the last valid orientation unchanged.
+
+Hold Alt over any XYZ, edge or custom construction guide to move it. Snapping is active immediately; release Alt to confirm, or use Esc / right click / Backspace to cancel. Over a guide, this takes priority over coplanar-face selection. Away from guides, Alt keeps its face-selection behavior.

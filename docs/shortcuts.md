@@ -30,8 +30,9 @@ The tables show the **default bindings**. Customize them in **Edit > Preferences
 | Hover an edge interior for 2 s | Add an edge guide |
 | Hover a vertex / guide intersection for 0.15 s | Acquire a temporary reference point |
 | A on a vertex, then click another | Add a guide through the two vertices |
-| Hold Ctrl + Alt over a guide | Move it |
+| Hold Alt over a guide | Move it |
 | Hold Shift over an XYZ axis | Rotate that reference |
+| X / Y / Z during rotation | Lock the local rotation axis; repeat to unlock |
 | R / Shift + R | Remove last guide / clear guides and temporary points; preserve grid |
 | G | Show / hide the grid |
 | Shift + G | Reposition / reorient the grid |
@@ -69,4 +70,4 @@ Shortcut rows configure keys and modifiers. Shared input keys configure picking,
 
 Saved preferences can differ from these defaults. Digits, decimal separators and minus remain numeric input. View navigation follows Blender's own keymap.
 
-The viewport header changes with the current step: start point, segment input, face selection, extrusion, guide edit, grid setup or dimension edit. It displays the configured bindings. Ctrl disables drawing snaps but enables extrusion snaps while held; Ctrl + Alt moves a guide.
+The viewport header changes with the current step: start point, segment input, face selection, extrusion, guide edit, grid setup or dimension edit. It displays the configured bindings. Ctrl disables drawing snaps but enables extrusion snaps while held; Alt moves a hovered guide.
