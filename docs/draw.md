@@ -1,22 +1,32 @@
 # Draw
 
-Click to place a start point, then click to add segments. Right-click to start a new chain.
+Place a start point, then add segments. On a face, hold Ctrl when clicking to draw instead of extruding; keep away from a guide handle.
 
-**On a face:** use **Ctrl + click**, away from guides, to start drawing instead of extruding.
+| Key or gesture | Action |
+| --- | --- |
+| Left click | Place the start point or confirm the next segment |
+| Right click | Start a new chain |
+| Ctrl + click inside a face | Start drawing on the face |
+| X / Y / Z | Lock the corresponding axis; press again to release |
+| Shift + X / Y / Z | Lock to YZ / XZ / XY; press again to release |
+| Type digits | Set the active length or angle value |
+| Tab | Switch between length and angle input |
+| Click / Enter | Confirm the segment |
+| Backspace | Delete a digit; outside input, cancel the unfinished chain |
+| Ctrl, held | Disable mesh, grid and guide snapping; release to restore snapping |
+| Ctrl + Z | Undo a validated edit; discard any unfinished guide/grid setup first |
+| Esc | Clear input, setup or selection; otherwise finish the tool |
+| Enter without input or selection | Finish the tool |
 
 ## Precision
 
-- **X / Y / Z:** lock an axis. Press again to release.
-- **Shift + X / Y / Z:** lock to YZ / XZ / XY while drawing. Press again to release.
-- Type a length, press **Tab**, then type an angle. Tab switches between the two fields.
-- **Click / Enter:** confirm the typed segment.
-- **Backspace:** correct the input. **Esc:** clear it.
+A typed length fixes distance while the direction follows the mouse. A typed angle fixes the angle while the length changes. Enter both to fix both. Tab alone selects a field without locking it.
 
-A length fixes the distance but lets the direction follow the mouse. An angle fixes the angle but lets the length change. Enter both to fix both.
+Drawing snapping is on by default. Hold Ctrl to disable it; release Ctrl to restore it. Explicit axis/plane locks and typed dimensions stay active without Ctrl. Hovering can still acquire construction guides and temporary references.
 
-Snap targets include vertices, midpoints, edges, faces, guides and grid nodes. With a fixed length, aiming at a snap target chooses the direction while keeping that length.
+Snap targets include vertices, midpoints, edges, faces, construction guides and grid nodes. With a fixed length, any snap target can choose the direction; the segment keeps its entered length. Displayed measurements follow the scene units. Drawing input uses Blender units; angles use degrees.
 
-Hold **Alt** to suspend automatic inferences; mesh and grid snaps remain available.
+In empty space, free drawing uses a view-parallel plane at the 3D cursor depth when no snap or grid plane applies.
 
 ## Faces
 
@@ -24,10 +34,12 @@ Close a flat contour to fill it. Draw between face borders to cut a face. Crossi
 
 To fill a missing flat region, retrace one of its border edges. Existing coplanar faces are not covered. A diagonal across an empty square can fill both sides.
 
-## Undo and finish
+## Navigation
 
-**Ctrl + Z** undoes a validated change; during a guide transformation it cancels the preview. **Backspace**, outside numeric input, also undoes the last geometry change.
+| Key or gesture | Action |
+| --- | --- |
+| Middle mouse / Shift + middle mouse / wheel | Orbit / pan / zoom with the default Blender keymap |
+| Numpad during a segment | Enter numbers |
+| Numpad before the first point | Use Blender view shortcuts |
 
-**Esc** cancels the current setup/input or selection, otherwise exits the tool. **Enter**, with no input or selection pending, also exits.
-
-Orbit, pan and zoom remain available. The numpad enters numbers during a segment; before the first point it keeps its view shortcuts.
+BagaCAD shortcuts can be changed in the [preferences](shortcuts.md); navigation uses Blender's keymap.

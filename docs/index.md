@@ -1,29 +1,33 @@
 # BagaCAD
 
-Draw edges, close faces and extrude directly in Blender.
+Draw edges, close faces, extrude and edit dimensions directly in Blender.
 
-**0.22 Alpha · Blender 5.2+**
-
-This is a short working manual. The addon is still in development; save a copy before testing.
+**0.22 Alpha · Blender 5.0+**
 
 ## Install
 
-1. Open **Edit > Preferences > Get Extensions**.
-2. Use the menu > **Install from Disk…** and select the BagaCAD ZIP.
-3. Enable the extension. Disable older development copies first.
+Drag the BagaCAD extension **ZIP** from your file browser into Blender, then confirm installation. Keep the ZIP intact; enable BagaCAD if prompted. Disable older development copies first.
 
-## Start drawing
+You can also use **Edit > Preferences > Get Extensions > menu > Install from Disk…**. Both methods are described in the [Blender manual](https://docs.blender.org/manual/en/5.0/editors/preferences/extensions.html).
 
-- **F3 > BagaCAD New Drawing** creates an empty mesh.
-- **F3 > BagaCAD Draw** works on the active mesh.
-- Both commands are also in **N > BagaCAD**.
+## Start
 
-Click points to draw. Close a flat contour to make a face. Right-click to start another chain. The viewport header shows the current action.
+Open the 3D Viewport sidebar with **N**, then select **BagaCAD**.
 
-[Drawing](draw.md) · [Extrusion](extrude.md) · [Dimensions](dimensions.md) · [Shortcuts](shortcuts.md)
+| Key or gesture | Action |
+| --- | --- |
+| Click **Draw** in the panel | Draw on the active mesh; create an empty mesh if no mesh is active |
+| Click **Dimensions** in the panel | Start directly in dimension editing on the active mesh |
+| F3 > BagaCAD New Drawing | Create an empty mesh and start drawing |
+| F3 > BagaCAD Draw | Start drawing on the active mesh |
+| Click **Documentation** in the panel | Open this manual |
+
+Click points to draw. Close a flat contour to make a face. The viewport header shows the current action. The Dimensions button needs an active mesh.
+
+[Draw](draw.md) · [Guides & grid](guides-grid.md) · [Extrude](extrude.md) · [Dimensions](dimensions.md) · [Shortcuts & settings](shortcuts.md)
 
 ## Scope
 
 BagaCAD edits the active mesh. Other objects can hide snap targets but are not themselves snap targets. Hidden mesh elements are ignored. X-Ray and Wireframe allow snapping to revealed geometry.
 
-Non-planar contours stay open. Complex geometry is not guaranteed to work. Dimensions and their locks are temporary tool data, not a persistent CAD constraint system.
+Non-planar contours stay open. Dimensions and their locks are temporary tool data, not a persistent CAD constraint system. This alpha is still in development.
