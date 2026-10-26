@@ -8,3 +8,8 @@ h1, h2, h3 { font-family: inherit; }
 @media (max-width: 768px) {
   .wy-nav-content { padding: 1.4em; }
 }
+
+/* Tool demonstrations fit the content column on desktop and mobile. */
+.demo { margin: 1.5em 0; }
+.demo img { display: block; width: 100%; max-width: 760px; height: auto; border-radius: 4px; }
+.demo figcaption { margin-top: .5em; color: #555; font-size: .9em; }

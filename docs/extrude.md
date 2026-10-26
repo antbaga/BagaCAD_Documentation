@@ -15,7 +15,14 @@ Hover inside a face with no segment in progress. A light overlay marks the extru
 
 Undo affects the latest validated edit. Cancelling a preview leaves earlier edits in the local history; press Ctrl + Z again to undo the previous edit. An empty history does nothing. After leaving BagaCAD, Blender handles undo.
 
+
+<figure class="demo">
+  <img src="../assets/gifs/extrude-face.gif" alt="Extrude the new face into a volume." loading="lazy" width="760">
+  <figcaption>Extrude the new face into a volume.</figcaption>
+</figure>
+
 ## Several faces
+
 
 | Key or gesture | Action |
 | --- | --- |
@@ -40,6 +47,12 @@ Height snapping is off by default and is active only while Ctrl is held.
 The face still moves only along its extrusion direction. A typed distance takes priority over snapping.
 
 ## Result
+
+<figure class="demo">
+  <img src="../assets/gifs/extrude-cut.gif" alt="Push a face inward to remove material from the same mesh." loading="lazy" width="760">
+  <figcaption>Push a face inward to remove material from the same mesh.</figcaption>
+</figure>
+
 
 Outward extrusion can fuse with volumes in the same mesh. Inward extrusion can make a pocket or a through-hole. The exact boolean calculation happens when you confirm and remains one undo step.
 
