@@ -138,6 +138,11 @@
 </tbody>
 </table>
 <p>Undo affects the latest validated edit. Cancelling a preview leaves earlier edits in the local history; press Ctrl + Z again to undo the previous edit. An empty history does nothing. After leaving BagaCAD, Blender handles undo.</p>
+<figure class="demo">
+  <img src="../assets/gifs/extrude-face.gif" alt="Extrude the new face into a volume." loading="lazy" width="760">
+  <figcaption>Extrude the new face into a volume.</figcaption>
+</figure>
+
 <h2 id="several-faces">Several faces</h2>
 <table>
 <thead>
@@ -196,6 +201,11 @@
 </table>
 <p>The face still moves only along its extrusion direction. A typed distance takes priority over snapping.</p>
 <h2 id="result">Result</h2>
+<figure class="demo">
+  <img src="../assets/gifs/extrude-cut.gif" alt="Push a face inward to remove material from the same mesh." loading="lazy" width="760">
+  <figcaption>Push a face inward to remove material from the same mesh.</figcaption>
+</figure>
+
 <p>Outward extrusion can fuse with volumes in the same mesh. Inward extrusion can make a pocket or a through-hole. The exact boolean calculation happens when you confirm and remains one undo step.</p>
 <p>An isolated surface keeps a bottom and becomes a volume. Other objects remain separate.</p>
               

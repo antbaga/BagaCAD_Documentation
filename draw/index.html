@@ -158,11 +158,21 @@
 </tbody>
 </table>
 <h2 id="precision">Precision</h2>
+<figure class="demo">
+  <img src="../assets/gifs/axis-drawing.gif" alt="Use the coloured axes to align successive segments." loading="lazy" width="760">
+  <figcaption>Use the coloured axes to align successive segments.</figcaption>
+</figure>
+
 <p>A typed length fixes distance while the direction follows the mouse. A typed angle fixes the angle while the length changes. Enter both to fix both. Tab alone selects a field without locking it.</p>
 <p>Drawing snapping is on by default. Hold Ctrl to disable it; release Ctrl to restore it. Explicit axis/plane locks and typed dimensions stay active without Ctrl. Hovering can still acquire construction guides and temporary references.</p>
 <p>Snap targets include vertices, midpoints, edges, faces, construction guides and grid nodes. With a fixed length, any snap target can choose the direction; the segment keeps its entered length. Displayed measurements follow the scene units. Drawing input uses Blender units; angles use degrees.</p>
 <p>In empty space, free drawing uses a view-parallel plane at the 3D cursor depth when no snap or grid plane applies.</p>
 <h2 id="faces">Faces</h2>
+<figure class="demo">
+  <img src="../assets/gifs/draw-close-face.gif" alt="Close the contour to create a face." loading="lazy" width="760">
+  <figcaption>Close the contour to create a face.</figcaption>
+</figure>
+
 <p>Close a flat contour to fill it. Draw between face borders to cut a face. Crossings split edges; overlapping segments merge.</p>
 <p>To fill a missing flat region, retrace one of its border edges. Existing coplanar faces are not covered. A diagonal across an empty square can fill both sides.</p>
 <h2 id="navigation">Navigation</h2>
