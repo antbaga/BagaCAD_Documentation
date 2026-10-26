@@ -1,10 +1,16 @@
 # Dimensions
 
-Click **Dimensions** in **N > BagaCAD**, or press **D** while drawing, then select an edge. A single selected or active edge may be picked automatically.
+Click **Dimensions** in **N > BagaCAD**, or press **D** while drawing, then select a vertex or an edge. Near an endpoint, the vertex takes priority. A single selected or active element may be picked automatically.
 
 Labels show the edge length, nearby parallel distances and angles. Lengths follow the scene units; angles use degrees.
 
 ## Change a value
+
+<figure class="demo">
+  <img src="../assets/gifs/edit-dimensions.gif" alt="Edit the dimensions around a selected vertex; connected faces follow." loading="lazy" width="760">
+  <figcaption>Edit the dimensions around a selected vertex; connected faces follow.</figcaption>
+</figure>
+
 
 | Key or gesture | Action |
 | --- | --- |

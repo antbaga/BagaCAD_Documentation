@@ -22,7 +22,16 @@ Guides stay available between segments during the active tool session. They are 
 
 Moving an XYZ reference moves its three axes together. An edge guide keeps its direction and can snap through a chosen point. Guide intersections must meet in 3D; a crossing visible only on screen is not a snap.
 
+
+<figure class="demo">
+  <img src="../assets/gifs/edge-guide.gif" alt="Use an edge extension as a guide for a new contour." loading="lazy" width="760">
+  <figcaption>Use an edge extension as a guide for a new contour.</figcaption>
+</figure>
+
+*This clip uses an earlier development build; use the shortcuts listed above.*
+
 ## What is a temporary reference point?
+
 
 A **temporary reference point** remembers a position briefly to help align the next segment. It does not create permanent construction geometry. Its projections offer XYZ directions and the extensions of edges meeting at that point. Dotted links show which reference supplies the snap.
 

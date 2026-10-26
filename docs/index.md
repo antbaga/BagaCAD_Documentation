@@ -26,6 +26,8 @@ Click points to draw. Close a flat contour to make a face. The viewport header s
 
 [Draw](draw.md) · [Guides & grid](guides-grid.md) · [Extrude](extrude.md) · [Dimensions](dimensions.md) · [Shortcuts & settings](shortcuts.md)
 
+Short GIF demonstrations are included in the tool pages. Some recordings use earlier development builds; the written shortcuts describe the current defaults.
+
 ## Scope
 
 BagaCAD edits the active mesh. Other objects can hide snap targets but are not themselves snap targets. Hidden mesh elements are ignored. X-Ray and Wireframe allow snapping to revealed geometry.

@@ -20,6 +20,12 @@ Place a start point, then add segments. On a face, hold Ctrl when clicking to dr
 
 ## Precision
 
+<figure class="demo">
+  <img src="../assets/gifs/axis-drawing.gif" alt="Use the coloured axes to align successive segments." loading="lazy" width="760">
+  <figcaption>Use the coloured axes to align successive segments.</figcaption>
+</figure>
+
+
 A typed length fixes distance while the direction follows the mouse. A typed angle fixes the angle while the length changes. Enter both to fix both. Tab alone selects a field without locking it.
 
 Drawing snapping is on by default. Hold Ctrl to disable it; release Ctrl to restore it. Explicit axis/plane locks and typed dimensions stay active without Ctrl. Hovering can still acquire construction guides and temporary references.
@@ -29,6 +35,12 @@ Snap targets include vertices, midpoints, edges, faces, construction guides and 
 In empty space, free drawing uses a view-parallel plane at the 3D cursor depth when no snap or grid plane applies.
 
 ## Faces
+
+<figure class="demo">
+  <img src="../assets/gifs/draw-close-face.gif" alt="Close the contour to create a face." loading="lazy" width="760">
+  <figcaption>Close the contour to create a face.</figcaption>
+</figure>
+
 
 Close a flat contour to fill it. Draw between face borders to cut a face. Crossings split edges; overlapping segments merge.
 
