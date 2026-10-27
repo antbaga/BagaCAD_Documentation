@@ -6,6 +6,8 @@ A **construction guide** is a drawing reference used to position or align geomet
 
 An **XYZ reference** has one origin and three perpendicular axes. An **edge guide** extends an edge direction infinitely in both directions. A **grid** provides evenly spaced snap points on a plane. They complement the mesh snaps instead of replacing them.
 
+Guides and temporary references also remain available during [circles, rectangles and offsets](shapes.md). The soft plane indicator around the shape cursor does not add snap points.
+
 Guides stay available between segments during the active tool session. They are not saved as scene objects. The grid has its own show/hide command and remembers its last setup for that session.
 
 | Key or gesture | Action |

@@ -2,7 +2,7 @@
 
 Click **Dimensions** in **N > BagaCAD**, or press **D** while drawing, then select a vertex or an edge. Near an endpoint, the vertex takes priority. A single selected or active element may be picked automatically.
 
-Labels show the edge length, nearby parallel distances and angles. Lengths follow the scene units; angles use degrees.
+A selected vertex shows its incident edge lengths and useful angles. A selected edge shows its length, nearby parallel distances and angles. Lengths follow the scene units; angles use degrees.
 
 ## Change a value
 
@@ -14,7 +14,7 @@ Labels show the edge length, nearby parallel distances and angles. Lengths follo
 
 | Key or gesture | Action |
 | --- | --- |
-| Click an edge | Select the edge to measure and edit |
+| Click a vertex or edge | Select the element to measure and edit |
 | Click a value | Highlight it in blue and type a replacement |
 | Drag a value left / right | Decrease / increase it |
 | Release the drag | Confirm the change |
@@ -28,11 +28,26 @@ Labels show the edge length, nearby parallel distances and angles. Lengths follo
 
 Lengths accept units such as `mm`, `cm`, `m`, `ft` and `in`. Angles accept values from −360° to 360°. Typed values do not use drag rounding.
 
-## Fixed end and locks
+## Vertex anchoring
+
+A selected vertex starts **anchored**. Click its support icon or press **Tab** outside input to toggle anchoring.
+
+- **Anchored:** the selected vertex stays fixed; its neighbours adapt.
+- **Free:** only the selected vertex moves; the opposite endpoints remain fixed. Shared faces follow without detaching.
+
+With no other length locked, a length edit moves along that edge. With locked lengths, the vertex can change direction while free angles adapt. The solver chooses the nearest position satisfying those lengths. For example, at a three-edge corner, lock two lengths and edit the third if a geometric solution exists. If the locks conflict, the edit is refused and the preview restored.
+
+## Readable angles
+
+The display hides composite angles already described by smaller coplanar sectors and redundant directions. Equal angles in different useful sectors can remain; a cube corner keeps its three independent right angles. Locked and currently edited angles remain visible.
+
+Arc sizes follow the visible edges and zoom. Labels sit near their arcs with staggered radii to reduce overlap. This changes the display, not the stored constraints.
+
+## Edge fixed end and locks
 
 | Key or gesture | Action |
 | --- | --- |
-| Tab outside input / click the support icon | Switch the fixed endpoint |
+| Tab outside input / click the support icon | Switch the fixed endpoint of the selected edge |
 | Hover a value | Reveal its padlock |
 | Click the padlock | Lock / unlock that dimension |
 
@@ -46,7 +61,7 @@ Locked values are kept while neighboring geometry adjusts. If constraints confli
 | --- | --- |
 | Ctrl + Z during input or a drag | Cancel the current preview |
 | Ctrl + Z outside input | Undo a validated change |
-| Backspace outside input | Deselect the edge |
+| Backspace outside input | Deselect the element |
 | Backspace during a drag | Cancel the preview |
-| Right click outside input | Deselect the edge |
+| Right click outside input | Deselect the element |
 | D / Esc outside input | Return to drawing |

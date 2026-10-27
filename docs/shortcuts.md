@@ -22,6 +22,23 @@ The tables show the **default bindings**. Customize them in **Edit > Preferences
 | Hold Ctrl while drawing | Disable snapping while held; enabled by default |
 | Hold Ctrl while extruding | Enable snapping while held; disabled by default |
 
+## Shapes, offsets and edge editing
+
+| Key or gesture | Action |
+| --- | --- |
+| C / B / O | Circle / rectangle / offset; repeat the active key to return to lines |
+| Tab in Circle | Switch centre-radius / three-point method; restart the shape |
+| V in Circle | Switch full circle / open arc |
+| Wheel after the first circle point | Change segments, without zooming |
+| Shift / Alt in Rectangle | Square / centred rectangle; combine for a centred square |
+| Tab in Rectangle | Switch width / height input |
+| Hold F | Invert shape/offset face filling |
+| Shift + clicks in Offset, then release Shift | Select individual edges, then start the shared offset |
+| Hold Shift + right mouse and sweep | Erase visible edges |
+| Alt over an edge, then left click | Preview, then confirm extension to a real target |
+
+See [Shapes & offsets](shapes.md) and [Erase and extend](draw.md#erase-and-extend-edges) for steps and modifier priorities.
+
 ## Construction references
 
 | Key or gesture | Action |
@@ -47,7 +64,7 @@ The tables show the **default bindings**. Customize them in **Edit > Preferences
 | Click / drag a value | Type / adjust it |
 | Ctrl while dragging | Use rounding increments |
 | Shift while dragging | Use fine adjustment |
-| Tab outside input / click support icon | Switch fixed endpoint |
+| Tab outside input / click support icon | Edge: switch fixed endpoint; vertex: toggle anchoring |
 | Hover a value, then click its padlock | Toggle the dimension lock |
 | Ctrl + A / Ctrl + V during input | Select all / paste |
 | D / Esc outside input | Return to Draw |
@@ -61,6 +78,8 @@ The tables show the **default bindings**. Customize them in **Edit > Preferences
 | Temporary Vertex Delay | 0.15 s |
 | Temporary Intersection Delay | 0.15 s |
 | Grid Step | 0.1 Blender unit |
+| Shapes: Create Faces by Default | Enabled; F temporarily inverts it |
+| Circle Segments | 48 (preference: 8–256; wheel while drawing: 3–256) |
 | Length Snap Step | 10 cm |
 | Angle Snap Step | 15° |
 
