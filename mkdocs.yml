@@ -9,6 +9,7 @@ theme:
 nav:
   - Start here: index.md
   - Draw: draw.md
+  - Shapes & offsets: shapes.md
   - Extrude: extrude.md
   - Dimensions: dimensions.md
   - Guides & grid: guides-grid.md
