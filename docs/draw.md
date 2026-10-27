@@ -32,7 +32,9 @@ Drawing snapping is on by default. Hold Ctrl to disable it; release Ctrl to rest
 
 Snap targets include vertices, midpoints, edges, faces, construction guides and grid nodes. With a fixed length, any snap target can choose the direction; the segment keeps its entered length. Displayed measurements follow the scene units. Drawing input uses Blender units; angles use degrees.
 
-In empty space, free drawing uses a view-parallel plane at the 3D cursor depth when no snap or grid plane applies.
+In empty space without a snap, grid plane or explicit constraint, the first point uses a view-parallel plane through the 3D cursor. Each following segment uses a view-parallel plane through its starting point instead.
+
+For circles, rectangles and parallel edges, see [Shapes & offsets](shapes.md).
 
 ## Faces
 
@@ -45,6 +47,23 @@ In empty space, free drawing uses a view-parallel plane at the 3D cursor depth w
 Close a flat contour to fill it. Draw between face borders to cut a face. Crossings split edges; overlapping segments merge.
 
 To fill a missing flat region, retrace one of its border edges. Existing coplanar faces are not covered. A diagonal across an empty square can fill both sides.
+
+## Erase and extend edges
+
+| Key or gesture | Action |
+| --- | --- |
+| Hold Shift + right mouse, then sweep | Erase visible edges under the cursor |
+| Release right mouse or Shift | End the stroke; one undo step for the whole sweep |
+| Esc / Ctrl + Z during the stroke | Cancel the sweep and restore the mesh |
+| Hold Alt over an edge | Preview extension from the endpoint nearest the cursor |
+| Alt + left click on the preview | Extend to the first real vertex, edge or face target |
+| Release Alt | Hide the extension preview |
+
+Erasing B–C in A–B–C–D keeps A–B and C–D. A divider between coplanar faces is dissolved while preserving the surface. Erasing a boundary or an edge between non-coplanar faces also removes its attached faces.
+
+Extension joins the target in 3D; a screen-only crossing is not enough. Inside a face plane it targets real boundaries; a transverse arrival into a face makes a local cut. Without a visible target, clicking does nothing.
+
+**Alt priority:** a hovered guide moves first; otherwise an edge can extend, while a face interior keeps coplanar extrusion. In Rectangle, Alt centres the shape.
 
 ## Navigation
 

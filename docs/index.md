@@ -1,6 +1,6 @@
 # BagaCAD
 
-Draw edges, close faces, extrude and edit dimensions directly in Blender.
+Draw lines, circles and rectangles, offset edges, extrude and edit dimensions directly in Blender.
 
 **0.22 Alpha · Blender 5.0+**
 
@@ -17,6 +17,7 @@ Open the 3D Viewport sidebar with **N**, then select **BagaCAD**.
 | Key or gesture | Action |
 | --- | --- |
 | Click **Draw** in the panel | Draw on the active mesh; create an empty mesh if no mesh is active |
+| **C / B / O** during Draw | Circle / rectangle / offset; also available as panel buttons |
 | Click **Dimensions** in the panel | Start directly in dimension editing on the active mesh |
 | F3 > BagaCAD New Drawing | Create an empty mesh and start drawing |
 | F3 > BagaCAD Draw | Start drawing on the active mesh |
@@ -24,7 +25,7 @@ Open the 3D Viewport sidebar with **N**, then select **BagaCAD**.
 
 Click points to draw. Close a flat contour to make a face. The viewport header shows the current action. The Dimensions button needs an active mesh.
 
-[Draw](draw.md) · [Guides & grid](guides-grid.md) · [Extrude](extrude.md) · [Dimensions](dimensions.md) · [Shortcuts & settings](shortcuts.md)
+[Draw](draw.md) · [Shapes & offsets](shapes.md) · [Guides & grid](guides-grid.md) · [Extrude](extrude.md) · [Dimensions](dimensions.md) · [Shortcuts & settings](shortcuts.md)
 
 Short GIF demonstrations are included in the tool pages. Some recordings use earlier development builds; the written shortcuts describe the current defaults.
 
