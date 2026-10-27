@@ -54,7 +54,11 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#change-a-value">Change a value</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#fixed-end-and-locks">Fixed end and locks</a>
+    <li class="toctree-l2"><a class="reference internal" href="#vertex-anchoring">Vertex anchoring</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#readable-angles">Readable angles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#edge-fixed-end-and-locks">Edge fixed end and locks</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#undo-and-return">Undo and return</a>
     </li>
@@ -95,7 +99,7 @@
               
                 <h1 id="dimensions">Dimensions</h1>
 <p>Click <strong>Dimensions</strong> in <strong>N &gt; BagaCAD</strong>, or press <strong>D</strong> while drawing, then select a vertex or an edge. Near an endpoint, the vertex takes priority. A single selected or active element may be picked automatically.</p>
-<p>Labels show the edge length, nearby parallel distances and angles. Lengths follow the scene units; angles use degrees.</p>
+<p>A selected vertex shows its incident edge lengths and useful angles. A selected edge shows its length, nearby parallel distances and angles. Lengths follow the scene units; angles use degrees.</p>
 <h2 id="change-a-value">Change a value</h2>
 <figure class="demo">
   <img src="../assets/gifs/edit-dimensions.gif" alt="Edit the dimensions around a selected vertex; connected faces follow." loading="lazy" width="760">
@@ -111,8 +115,8 @@
 </thead>
 <tbody>
 <tr>
-<td>Click an edge</td>
-<td>Select the edge to measure and edit</td>
+<td>Click a vertex or edge</td>
+<td>Select the element to measure and edit</td>
 </tr>
 <tr>
 <td>Click a value</td>
@@ -157,7 +161,17 @@
 </tbody>
 </table>
 <p>Lengths accept units such as <code>mm</code>, <code>cm</code>, <code>m</code>, <code>ft</code> and <code>in</code>. Angles accept values from −360° to 360°. Typed values do not use drag rounding.</p>
-<h2 id="fixed-end-and-locks">Fixed end and locks</h2>
+<h2 id="vertex-anchoring">Vertex anchoring</h2>
+<p>A selected vertex starts <strong>anchored</strong>. Click its support icon or press <strong>Tab</strong> outside input to toggle anchoring.</p>
+<ul>
+<li><strong>Anchored:</strong> the selected vertex stays fixed; its neighbours adapt.</li>
+<li><strong>Free:</strong> only the selected vertex moves; the opposite endpoints remain fixed. Shared faces follow without detaching.</li>
+</ul>
+<p>With no other length locked, a length edit moves along that edge. With locked lengths, the vertex can change direction while free angles adapt. The solver chooses the nearest position satisfying those lengths. For example, at a three-edge corner, lock two lengths and edit the third if a geometric solution exists. If the locks conflict, the edit is refused and the preview restored.</p>
+<h2 id="readable-angles">Readable angles</h2>
+<p>The display hides composite angles already described by smaller coplanar sectors and redundant directions. Equal angles in different useful sectors can remain; a cube corner keeps its three independent right angles. Locked and currently edited angles remain visible.</p>
+<p>Arc sizes follow the visible edges and zoom. Labels sit near their arcs with staggered radii to reduce overlap. This changes the display, not the stored constraints.</p>
+<h2 id="edge-fixed-end-and-locks">Edge fixed end and locks</h2>
 <table>
 <thead>
 <tr>
@@ -168,7 +182,7 @@
 <tbody>
 <tr>
 <td>Tab outside input / click the support icon</td>
-<td>Switch the fixed endpoint</td>
+<td>Switch the fixed endpoint of the selected edge</td>
 </tr>
 <tr>
 <td>Hover a value</td>
@@ -201,7 +215,7 @@
 </tr>
 <tr>
 <td>Backspace outside input</td>
-<td>Deselect the edge</td>
+<td>Deselect the element</td>
 </tr>
 <tr>
 <td>Backspace during a drag</td>
@@ -209,7 +223,7 @@
 </tr>
 <tr>
 <td>Right click outside input</td>
-<td>Deselect the edge</td>
+<td>Deselect the element</td>
 </tr>
 <tr>
 <td>D / Esc outside input</td>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://antbaga.github.io/BagaCAD_Documentation/shapes/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Shapes &amp; offsets - BagaCAD</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link href="../stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Shapes \u0026amp; offsets";
+        var mkdocs_page_input_path = "shapes.md";
+        var mkdocs_page_url = "/BagaCAD_Documentation/shapes/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> BagaCAD
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Start here</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../draw/">Draw</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../extrude/">Extrude</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../dimensions/">Dimensions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../guides-grid/">Guides & grid</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../shortcuts/">Shortcuts & settings</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">BagaCAD</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Shapes &amp; offsets</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/antbaga/BagaCAD_Documentation/edit/main/docs/shapes.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="shapes-offsets">Shapes &amp; offsets</h1>
+<p>Use <strong>C</strong>, <strong>B</strong> or <strong>O</strong> during Draw, or the matching button in <strong>N &gt; BagaCAD</strong>. Press the active tool key again to return to lines. <strong>Esc / right click</strong> cancels the current shape and returns to Draw. Each confirmed shape is one undo step.</p>
+<h2 id="circles-and-arcs">Circles and arcs</h2>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C, then two clicks</td>
+<td>Circle: centre, then radius</td>
+</tr>
+<tr>
+<td>Type a radius after placing the centre</td>
+<td>Set an exact radius; click / Enter to confirm</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>Switch centre-radius / three-point method; restart the current shape</td>
+</tr>
+<tr>
+<td>Three clicks in three-point mode</td>
+<td>Create a full circle through the three points</td>
+</tr>
+<tr>
+<td>V</td>
+<td>Switch full circle / open arc, keeping placed points</td>
+</tr>
+<tr>
+<td>Wheel after the first click</td>
+<td>Change segment count without zooming</td>
+</tr>
+</tbody>
+</table>
+<p>For a centre-based arc, click the <strong>centre</strong>, <strong>start/radius</strong>, then <strong>end</strong>; the arc runs counterclockwise in its drawing plane. For a three-point arc, it runs from the first point to the third through the second.</p>
+<p>The radius and edge count appear on the preview. The initial resolution is <strong>48 segments</strong>, configurable in preferences; the wheel allows <strong>3–256</strong> during drawing. Before the first click, the wheel still zooms. Arcs remain open lines.</p>
+<h2 id="rectangles-and-squares">Rectangles and squares</h2>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B, then two clicks</td>
+<td>First corner, then opposite corner</td>
+</tr>
+<tr>
+<td>Hold Shift</td>
+<td>Constrain to a square</td>
+</tr>
+<tr>
+<td>Hold Alt</td>
+<td>First point becomes the centre; aim at a corner</td>
+</tr>
+<tr>
+<td>Hold Shift + Alt</td>
+<td>Centred square</td>
+</tr>
+<tr>
+<td>Type a size, then Tab</td>
+<td>Enter width, then height; Tab switches the active side</td>
+</tr>
+</tbody>
+</table>
+<p>Both side lengths appear on the preview. The active value is highlighted beside its side; the first digit after Tab replaces the previous value. For centred shapes, width and height are the <strong>total dimensions</strong>.</p>
+<h2 id="drawing-plane-and-references">Drawing plane and references</h2>
+<p>Before each new circle or rectangle, hover the target face. Its plane is detected before the first click, including from an incident face when snapping to an edge or vertex. Without a face, the tool uses the active grid, then guides or the view. The plane stays fixed after the first click and is detected again for the next shape.</p>
+<p>The soft grid around the cursor shows this plane; it is an indicator, not an extra snap grid. <strong>X / Y / Z</strong> after the first point orients the shape plane to <strong>YZ / XZ / XY</strong> in the current reference frame. A three-point circle uses the actual 3D snapped points to determine its plane.</p>
+<p>Hover references and construction guides remain available while drawing shapes and offsets. <strong>A</strong> creates a two-point guide; <strong>G</strong> and grid setup commands stay available. Hold <strong>Ctrl</strong> to suspend placement snapping. The snap marker stays on the target even when the shape needs a projection onto its plane.</p>
+<h2 id="offset-edges">Offset edges</h2>
+<p>Press <strong>O</strong>, click an edge, move to the desired side, then click to confirm. Type a distance for an exact offset; the mouse chooses the side.</p>
+<p>For several edges: <strong>O → hold Shift → click the edges → release Shift → move/type → click</strong>. Each click adds only the targeted edge, shown in orange. Releasing Shift groups the selection into chains and starts the preview from the last selected edge. Independent chains share the distance and one undo step.</p>
+<p>Source edges remain in place. Chains must be planar; corners use miter joins and self-crossing offsets are rejected. Offsets work on existing faces or loose edges.</p>
+<h2 id="filled-faces-or-lines-only">Filled faces or lines only</h2>
+<p>Closed shapes create faces by default. <strong>Hold F</strong> to invert filling while placing a circle, rectangle or offset. The preference <strong>Shapes: Create Faces by Default</strong> reverses this default.</p>
+<p>With filling enabled, an offset also creates the connecting strip. With filling disabled, it creates only parallel lines. On an existing face, the new lines still cut the surface: disabling fill does not remove existing material. Shared edges and intersections merge into the active mesh.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/antbaga/BagaCAD_Documentation" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
