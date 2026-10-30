@@ -60,9 +60,11 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Guides & grid</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#what-is-a-construction-guide">What is a construction guide?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#guide-or-temporary-point">Guide or temporary point?</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#what-is-a-temporary-reference-point">What is a temporary reference point?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#construction-guides">Construction guides</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#temporary-reference-points">Temporary reference points</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#construction-grid">Construction grid</a>
     </li>
@@ -98,11 +100,52 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="guides-grid">Guides &amp; grid</h1>
-<h2 id="what-is-a-construction-guide">What is a construction guide?</h2>
-<p>A <strong>construction guide</strong> is a drawing reference used to position or align geometry. It is not an edge or face in the mesh and is not rendered. In BagaCAD, construction guides include XYZ references, infinite edge lines and the construction grid.</p>
-<p>An <strong>XYZ reference</strong> has one origin and three perpendicular axes. An <strong>edge guide</strong> extends an edge direction infinitely in both directions. A <strong>grid</strong> provides evenly spaced snap points on a plane. They complement the mesh snaps instead of replacing them.</p>
-<p>Guides and temporary references also remain available during <a href="../shapes/">circles, rectangles and offsets</a>. The soft plane indicator around the shape cursor does not add snap points.</p>
-<p>Guides stay available between segments during the active tool session. They are not saved as scene objects. The grid has its own show/hide command and remembers its last setup for that session.</p>
+<p>BagaCAD has three drawing references: <strong>construction guides</strong>, <strong>temporary reference points</strong> and the <strong>construction grid</strong>. None of them is mesh geometry, none is rendered, and none is saved in the scene. They add snap targets on top of the mesh snaps.</p>
+<h2 id="guide-or-temporary-point">Guide or temporary point?</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Construction guide</th>
+<th>Temporary reference point</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Use</td>
+<td>Lasting alignment for several segments</td>
+<td>Quick alignment for the segment in progress</td>
+</tr>
+<tr>
+<td>Created by</td>
+<td>Hovering 2 s, or <strong>A</strong> + two vertices</td>
+<td>Hovering 0.15 s on a vertex or intersection</td>
+</tr>
+<tr>
+<td>Form</td>
+<td>XYZ frame (three axes) or infinite line</td>
+<td>A point offering XYZ projections and the directions of its edges</td>
+</tr>
+<tr>
+<td>Display</td>
+<td>Always drawn</td>
+<td>Hidden; a dotted link appears only while you follow it</td>
+</tr>
+<tr>
+<td>Lifetime</td>
+<td>Until <strong>R</strong> / <strong>Shift + R</strong> or the end of the tool</td>
+<td>Two at most; cleared after each confirmed segment, shape or extrusion</td>
+</tr>
+<tr>
+<td>Editable</td>
+<td>Move with <strong>Alt</strong>, rotate an XYZ frame with <strong>Shift</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>A short hover acquires a temporary point; keep hovering and a guide is created where supported. A small bar under the cursor fills during the guide delay. All four delays are editable in <a href="../shortcuts/#preferences">preferences</a>.</p>
+<h2 id="construction-guides">Construction guides</h2>
+<p>A guide is a fixed reference you build on purpose. An <strong>XYZ guide</strong> has one origin and three perpendicular axes. An <strong>edge guide</strong> extends an edge infinitely in both directions.</p>
 <table>
 <thead>
 <tr>
@@ -113,11 +156,11 @@
 <tbody>
 <tr>
 <td>Hover a vertex or edge midpoint for 2 s</td>
-<td>Add an XYZ construction guide</td>
+<td>Add an XYZ guide</td>
 </tr>
 <tr>
-<td>Hover an edge away from its midpoint and ends for 2 s</td>
-<td>Add an infinite guide along that edge</td>
+<td>Hover an edge, away from its midpoint and ends, for 2 s</td>
+<td>Add an edge guide</td>
 </tr>
 <tr>
 <td>A on a vertex, then click another vertex</td>
@@ -125,39 +168,42 @@
 </tr>
 <tr>
 <td>Hold Alt over a guide, then move</td>
-<td>Move the guide; release to confirm</td>
+<td>Move the guide; release Alt to confirm</td>
 </tr>
 <tr>
 <td>Hold Shift over an XYZ axis, then aim</td>
-<td>Rotate the whole XYZ reference around its fixed origin; release to confirm</td>
+<td>Rotate the XYZ guide around its origin; release Shift to confirm</td>
 </tr>
 <tr>
-<td>X / Y / Z while holding Shift to rotate XYZ</td>
-<td>Lock rotation around that initial local guide axis; repeat to unlock</td>
+<td>X / Y / Z while rotating</td>
+<td>Lock rotation to that local axis; press again to unlock</td>
 </tr>
 <tr>
-<td>Esc / right click during a transformation</td>
-<td>Cancel the preview</td>
+<td>Esc / right click / Backspace during a move or rotation</td>
+<td>Cancel it</td>
 </tr>
 <tr>
 <td>R</td>
-<td>Remove the last XYZ or edge guide</td>
+<td>Remove the last guide</td>
 </tr>
 <tr>
 <td>Shift + R</td>
-<td>Clear XYZ/edge guides and temporary references; the grid is unchanged</td>
+<td>Remove all guides and temporary points; the grid is kept</td>
 </tr>
 </tbody>
 </table>
-<p>Moving an XYZ reference moves its three axes together. An edge guide keeps its direction and can snap through a chosen point. Guide intersections must meet in 3D; a crossing visible only on screen is not a snap.</p>
+<p>Guides are not created while typing a value or navigating the view. They stay available between segments, in shapes and offsets, and after switching to Dimensions and back.</p>
+<p>Moving an XYZ guide moves its three axes together; an edge guide keeps its direction. Snapping is active during the move. Over a guide, Alt moves it; elsewhere Alt keeps its usual role (edge extension, coplanar faces).</p>
+<p>During a rotation, X / Y / Z refer to the guide's own axes at the start of the gesture. The origin and the locked axis stay fixed. If the grabbed axis is the rotation axis, the next axis supplies the aiming direction.</p>
+<p>Guide intersections must meet in 3D; a crossing visible only on screen is not a snap.</p>
 <figure class="demo">
   <img src="../assets/gifs/edge-guide.gif" alt="Use an edge extension as a guide for a new contour." loading="lazy" width="760">
   <figcaption>Use an edge extension as a guide for a new contour.</figcaption>
 </figure>
 
 <p><em>This clip uses an earlier development build; use the shortcuts listed above.</em></p>
-<h2 id="what-is-a-temporary-reference-point">What is a temporary reference point?</h2>
-<p>A <strong>temporary reference point</strong> remembers a position briefly to help align the next segment. It does not create permanent construction geometry. Its projections offer XYZ directions and the extensions of edges meeting at that point. Dotted links show which reference supplies the snap.</p>
+<h2 id="temporary-reference-points">Temporary reference points</h2>
+<p>A temporary point remembers a position for the segment in progress. It creates nothing and cannot be edited.</p>
 <table>
 <thead>
 <tr>
@@ -168,24 +214,27 @@
 <tbody>
 <tr>
 <td>Hover a vertex for 0.15 s, then move away</td>
-<td>Remember it and use its temporary projections</td>
+<td>Remember it; its XYZ projections and edge directions become snaps</td>
 </tr>
 <tr>
 <td>Hover a guide/guide or guide/edge intersection for 0.15 s</td>
-<td>Remember that intersection as a temporary reference</td>
+<td>Remember that intersection</td>
 </tr>
 <tr>
-<td>Acquire a third temporary point</td>
-<td>Replace the oldest of the two remembered points</td>
+<td>Acquire a third point</td>
+<td>Replace the oldest one</td>
 </tr>
 <tr>
-<td>Confirm a segment / start a new chain / clear guides</td>
-<td>Clear the temporary references</td>
+<td>Confirm a segment, shape or extrusion</td>
+<td>Clear the temporary points</td>
+</tr>
+<tr>
+<td>Right click / Backspace (no input) / Ctrl + Z / Shift + R / D</td>
+<td>Clear the temporary points</td>
 </tr>
 </tbody>
 </table>
-<p>Two temporary points can work together, including intersections with construction guides. Following a temporary axis can also snap to its intersection with a plane through the other point: XY, YZ, XZ or an incident face plane. Those planes stay invisible; a violet dotted link identifies the relation.</p>
-<p>A short hover acquires a temporary reference; continuing the hover can create a construction guide where supported. The four hover delays are editable in <a href="../shortcuts/">preferences</a>.</p>
+<p>Two temporary points work together: their projections can cross each other or cross a guide. Following one projection can also snap where it meets a plane through the other point (XY, YZ, XZ or one of its faces). These planes are not drawn; a dotted link shows which point supplies the snap.</p>
 <h2 id="construction-grid">Construction grid</h2>
 <table>
 <thead>
@@ -197,43 +246,40 @@
 <tbody>
 <tr>
 <td>G</td>
-<td>Show / hide the remembered grid; on first use, create XY at the 3D cursor</td>
+<td>Show / hide the grid; on first use, create XY at the 3D cursor</td>
 </tr>
 <tr>
 <td>Shift + G</td>
-<td>Place or reorient the grid in two clicks: origin, then X direction</td>
+<td>Place or reorient: click the origin, then the X direction</td>
 </tr>
 <tr>
-<td>G while choosing the second direction point</td>
-<td>Toggle using the measured segment length as cell size</td>
+<td>G while choosing the direction</td>
+<td>Toggle using the measured length as cell size</td>
 </tr>
 <tr>
-<td>Hold Ctrl at the second direction click</td>
-<td>Use that segment length as cell size</td>
+<td>Hold Ctrl on the direction click</td>
+<td>Use the measured length as cell size</td>
 </tr>
 <tr>
 <td>Ctrl + G</td>
-<td>Set cell size by measuring a segment or typing a number, then Enter</td>
+<td>Set cell size: measure a segment, or type a value and press Enter</td>
 </tr>
 <tr>
 <td>Alt + G</td>
-<td>Place and align the grid to the hovered face</td>
+<td>Place and align the grid on the hovered face</td>
 </tr>
 <tr>
-<td>Shift + X / Y / Z, no segment active</td>
+<td>Shift + X / Y / Z, no segment in progress</td>
 <td>Orient a world grid to YZ / XZ / XY</td>
 </tr>
 <tr>
 <td>Esc / right click during setup</td>
-<td>Cancel setup and restore the previous grid</td>
+<td>Cancel and restore the previous grid</td>
 </tr>
 </tbody>
 </table>
-<p>G normally hides the grid; during direction setup it controls the cell-size option instead. Hiding and showing it preserves its origin, orientation and cell size. R and Shift + R do not hide it.</p>
-<p>The grid snaps only to line intersections, not cell centers or side midpoints. Its default step is 0.1 Blender unit. Mesh, guide and temporary-reference snaps remain available with the grid active.</p>
-<p>While drawing, snapping to these references and grid nodes is enabled by default. Hold Ctrl to disable snapping; the grid remains a drawing plane without rounding to nodes. Grid setup and guide editing keep their own point picking.</p>
-<p>During an XYZ rotation, X/Y/Z refer to the guide frame at the start of the gesture, including tilted guides. The origin and the selected rotation axis stay fixed; all three axes rotate together. If the grabbed axis is itself the rotation axis, the next local axis supplies the aiming direction. A target on the rotation axis leaves the last valid orientation unchanged.</p>
-<p>Hold Alt over any XYZ, edge or custom construction guide to move it. Snapping is active immediately; release Alt to confirm, or use Esc / right click / Backspace to cancel. Over a guide, this takes priority over coplanar-face selection. Away from guides, Alt keeps its face-selection behavior.</p>
+<p>The grid snaps to line intersections only. Default step: 0.1 Blender unit. Hiding and showing it keeps its origin, orientation and size for the tool session. R and Shift + R do not affect it.</p>
+<p>Holding Ctrl while drawing disables snapping to guides, temporary points and grid nodes; the grid stays the drawing plane. Grid setup and guide editing keep their own point picking.</p>
               
             </div>
           </div><footer>

@@ -102,7 +102,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="shapes-offsets">Shapes &amp; offsets</h1>
-<p>Use <strong>C</strong>, <strong>B</strong> or <strong>O</strong> during Draw, or the matching button in <strong>N &gt; BagaCAD</strong>. Press the active tool key again to return to lines. <strong>Esc / right click</strong> cancels the current shape and returns to Draw. Each confirmed shape is one undo step.</p>
+<p>Use <strong>C</strong>, <strong>B</strong> or <strong>O</strong> during Draw, or the matching button in <strong>N &gt; BagaCAD</strong>. Press the active tool key again to return to lines. <strong>Backspace</strong> deletes a digit, or without input resets the placed points. <strong>Esc / right click</strong> cancels the current shape and returns to Draw. Each confirmed shape is one undo step.</p>
 <h2 id="circles-and-arcs">Circles and arcs</h2>
 <table>
 <thead>
@@ -175,7 +175,7 @@
 <h2 id="drawing-plane-and-references">Drawing plane and references</h2>
 <p>Before each new circle or rectangle, hover the target face. Its plane is detected before the first click, including from an incident face when snapping to an edge or vertex. Without a face, the tool uses the active grid, then guides or the view. The plane stays fixed after the first click and is detected again for the next shape.</p>
 <p>The soft grid around the cursor shows this plane; it is an indicator, not an extra snap grid. <strong>X / Y / Z</strong> after the first point orients the shape plane to <strong>YZ / XZ / XY</strong> in the current reference frame. A three-point circle uses the actual 3D snapped points to determine its plane.</p>
-<p>Hover references and construction guides remain available while drawing shapes and offsets. <strong>A</strong> creates a two-point guide; <strong>G</strong> and grid setup commands stay available. Hold <strong>Ctrl</strong> to suspend placement snapping. The snap marker stays on the target even when the shape needs a projection onto its plane.</p>
+<p>Construction guides and temporary reference points remain available while drawing shapes and offsets. <strong>A</strong> creates a two-point guide; <strong>G</strong> and grid setup commands stay available. Hold <strong>Ctrl</strong> to suspend placement snapping. The snap marker stays on the target even when the shape needs a projection onto its plane.</p>
 <h2 id="offset-edges">Offset edges</h2>
 <p>Press <strong>O</strong>, click an edge, move to the desired side, then click to confirm. Type a distance for an exact offset; the mouse chooses the side.</p>
 <p>For several edges: <strong>O → hold Shift → click the edges → release Shift → move/type → click</strong>. Each click adds only the targeted edge, shown in orange. Releasing Shift groups the selection into chains and starts the preview from the last selected edge. Independent chains share the distance and one undo step.</p>

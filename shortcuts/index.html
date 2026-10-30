@@ -68,7 +68,11 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#shapes-offsets-and-edge-editing">Shapes, offsets and edge editing</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#construction-references">Construction references</a>
+    <li class="toctree-l2"><a class="reference internal" href="#construction-guides">Construction guides</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#temporary-reference-points">Temporary reference points</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#grid">Grid</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#dimensions">Dimensions</a>
     </li>
@@ -212,6 +216,10 @@
 <td>Invert shape/offset face filling</td>
 </tr>
 <tr>
+<td>Backspace in a shape</td>
+<td>Delete a digit; without input, reset the placed points</td>
+</tr>
+<tr>
 <td>Shift + clicks in Offset, then release Shift</td>
 <td>Select individual edges, then start the shared offset</td>
 </tr>
@@ -226,7 +234,8 @@
 </tbody>
 </table>
 <p>See <a href="../shapes/">Shapes &amp; offsets</a> and <a href="../draw/#erase-and-extend-edges">Erase and extend</a> for steps and modifier priorities.</p>
-<h2 id="construction-references">Construction references</h2>
+<h2 id="construction-guides">Construction guides</h2>
+<p>Lasting references, kept until removed. See <a href="../guides-grid/#guide-or-temporary-point">Guides &amp; grid</a> for the difference with temporary points.</p>
 <table>
 <thead>
 <tr>
@@ -244,10 +253,6 @@
 <td>Add an edge guide</td>
 </tr>
 <tr>
-<td>Hover a vertex / guide intersection for 0.15 s</td>
-<td>Acquire a temporary reference point</td>
-</tr>
-<tr>
 <td>A on a vertex, then click another</td>
 <td>Add a guide through the two vertices</td>
 </tr>
@@ -257,7 +262,7 @@
 </tr>
 <tr>
 <td>Hold Shift over an XYZ axis</td>
-<td>Rotate that reference</td>
+<td>Rotate that XYZ guide</td>
 </tr>
 <tr>
 <td>X / Y / Z during rotation</td>
@@ -265,8 +270,43 @@
 </tr>
 <tr>
 <td>R / Shift + R</td>
-<td>Remove last guide / clear guides and temporary points; preserve grid</td>
+<td>Remove last guide / remove all guides and temporary points; the grid is kept</td>
 </tr>
+</tbody>
+</table>
+<h2 id="temporary-reference-points">Temporary reference points</h2>
+<p>Short-lived alignment points for the segment in progress; not editable.</p>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hover a vertex for 0.15 s, then move away</td>
+<td>Use its XYZ projections and edge directions</td>
+</tr>
+<tr>
+<td>Hover a guide intersection for 0.15 s</td>
+<td>Remember that intersection</td>
+</tr>
+<tr>
+<td>Confirm a segment / right click / Shift + R</td>
+<td>Clear the temporary points</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grid">Grid</h2>
+<table>
+<thead>
+<tr>
+<th>Key or gesture</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>G</td>
 <td>Show / hide the grid</td>
@@ -334,48 +374,57 @@
 <tr>
 <th>Setting</th>
 <th>Default</th>
+<th>Controls</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Create Guide Timer</td>
 <td>2.0 s</td>
+<td>Hover time for an XYZ guide on a vertex / midpoint</td>
 </tr>
 <tr>
 <td>Edge Guide Delay</td>
 <td>2.0 s</td>
+<td>Hover time for an edge guide</td>
 </tr>
 <tr>
 <td>Temporary Vertex Delay</td>
 <td>0.15 s</td>
+<td>Hover time for a temporary point on a vertex</td>
 </tr>
 <tr>
 <td>Temporary Intersection Delay</td>
 <td>0.15 s</td>
+<td>Hover time for a temporary point on an intersection</td>
 </tr>
 <tr>
-<td>Grid Step</td>
+<td>Default Grid Step Size</td>
 <td>0.1 Blender unit</td>
+<td>Initial grid cell size</td>
 </tr>
 <tr>
 <td>Shapes: Create Faces by Default</td>
-<td>Enabled; F temporarily inverts it</td>
+<td>Enabled</td>
+<td>Fill closed shapes; hold F to invert</td>
 </tr>
 <tr>
 <td>Circle Segments</td>
-<td>48 (preference: 8–256; wheel while drawing: 3–256)</td>
+<td>48</td>
+<td>Initial resolution (8–256; wheel while drawing: 3–256)</td>
 </tr>
 <tr>
 <td>Length Snap Step</td>
 <td>10 cm</td>
+<td>Ctrl-drag increment in Dimensions</td>
 </tr>
 <tr>
 <td>Angle Snap Step</td>
 <td>15°</td>
+<td>Ctrl-drag increment in Dimensions</td>
 </tr>
 </tbody>
 </table>
-<p>The length and angle increments apply only to Ctrl-dragging dimensions. <strong>Display Text</strong> controls labels near the cursor.</p>
 <p>Shortcut rows configure keys and modifiers. Shared input keys configure picking, confirmation, cancellation and text correction. Hold modifiers configure related gestures together; use a different modifier for each row. Red rows flag conflicting bindings. Right-click a setting to reset it to its default.</p>
 <p>Saved preferences can differ from these defaults. Digits, decimal separators and minus remain numeric input. View navigation follows Blender's own keymap.</p>
 <p>The viewport header changes with the current step: start point, segment input, face selection, extrusion, guide edit, grid setup or dimension edit. It displays the configured bindings. Ctrl disables drawing snaps but enables extrusion snaps while held; Alt moves a hovered guide.</p>
