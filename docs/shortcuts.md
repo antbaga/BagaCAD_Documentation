@@ -33,24 +33,41 @@ The tables show the **default bindings**. Customize them in **Edit > Preferences
 | Shift / Alt in Rectangle | Square / centred rectangle; combine for a centred square |
 | Tab in Rectangle | Switch width / height input |
 | Hold F | Invert shape/offset face filling |
+| Backspace in a shape | Delete a digit; without input, reset the placed points |
 | Shift + clicks in Offset, then release Shift | Select individual edges, then start the shared offset |
 | Hold Shift + right mouse and sweep | Erase visible edges |
 | Alt over an edge, then left click | Preview, then confirm extension to a real target |
 
 See [Shapes & offsets](shapes.md) and [Erase and extend](draw.md#erase-and-extend-edges) for steps and modifier priorities.
 
-## Construction references
+## Construction guides
+
+Lasting references, kept until removed. See [Guides & grid](guides-grid.md#guide-or-temporary-point) for the difference with temporary points.
 
 | Key or gesture | Action |
 | --- | --- |
 | Hover a vertex / midpoint for 2 s | Add an XYZ guide |
 | Hover an edge interior for 2 s | Add an edge guide |
-| Hover a vertex / guide intersection for 0.15 s | Acquire a temporary reference point |
 | A on a vertex, then click another | Add a guide through the two vertices |
 | Hold Alt over a guide | Move it |
-| Hold Shift over an XYZ axis | Rotate that reference |
+| Hold Shift over an XYZ axis | Rotate that XYZ guide |
 | X / Y / Z during rotation | Lock the local rotation axis; repeat to unlock |
-| R / Shift + R | Remove last guide / clear guides and temporary points; preserve grid |
+| R / Shift + R | Remove last guide / remove all guides and temporary points; the grid is kept |
+
+## Temporary reference points
+
+Short-lived alignment points for the segment in progress; not editable.
+
+| Key or gesture | Action |
+| --- | --- |
+| Hover a vertex for 0.15 s, then move away | Use its XYZ projections and edge directions |
+| Hover a guide intersection for 0.15 s | Remember that intersection |
+| Confirm a segment / right click / Shift + R | Clear the temporary points |
+
+## Grid
+
+| Key or gesture | Action |
+| --- | --- |
 | G | Show / hide the grid |
 | Shift + G | Reposition / reorient the grid |
 | Ctrl + G | Set cell size |
@@ -71,19 +88,17 @@ See [Shapes & offsets](shapes.md) and [Erase and extend](draw.md#erase-and-exten
 
 ## Preferences
 
-| Setting | Default |
-| --- | --- |
-| Create Guide Timer | 2.0 s |
-| Edge Guide Delay | 2.0 s |
-| Temporary Vertex Delay | 0.15 s |
-| Temporary Intersection Delay | 0.15 s |
-| Grid Step | 0.1 Blender unit |
-| Shapes: Create Faces by Default | Enabled; F temporarily inverts it |
-| Circle Segments | 48 (preference: 8–256; wheel while drawing: 3–256) |
-| Length Snap Step | 10 cm |
-| Angle Snap Step | 15° |
-
-The length and angle increments apply only to Ctrl-dragging dimensions. **Display Text** controls labels near the cursor.
+| Setting | Default | Controls |
+| --- | --- | --- |
+| Create Guide Timer | 2.0 s | Hover time for an XYZ guide on a vertex / midpoint |
+| Edge Guide Delay | 2.0 s | Hover time for an edge guide |
+| Temporary Vertex Delay | 0.15 s | Hover time for a temporary point on a vertex |
+| Temporary Intersection Delay | 0.15 s | Hover time for a temporary point on an intersection |
+| Default Grid Step Size | 0.1 Blender unit | Initial grid cell size |
+| Shapes: Create Faces by Default | Enabled | Fill closed shapes; hold F to invert |
+| Circle Segments | 48 | Initial resolution (8–256; wheel while drawing: 3–256) |
+| Length Snap Step | 10 cm | Ctrl-drag increment in Dimensions |
+| Angle Snap Step | 15° | Ctrl-drag increment in Dimensions |
 
 Shortcut rows configure keys and modifiers. Shared input keys configure picking, confirmation, cancellation and text correction. Hold modifiers configure related gestures together; use a different modifier for each row. Red rows flag conflicting bindings. Right-click a setting to reset it to its default.
 

@@ -1,6 +1,6 @@
 # Shapes & offsets
 
-Use **C**, **B** or **O** during Draw, or the matching button in **N > BagaCAD**. Press the active tool key again to return to lines. **Esc / right click** cancels the current shape and returns to Draw. Each confirmed shape is one undo step.
+Use **C**, **B** or **O** during Draw, or the matching button in **N > BagaCAD**. Press the active tool key again to return to lines. **Backspace** deletes a digit, or without input resets the placed points. **Esc / right click** cancels the current shape and returns to Draw. Each confirmed shape is one undo step.
 
 ## Circles and arcs
 
@@ -35,7 +35,7 @@ Before each new circle or rectangle, hover the target face. Its plane is detecte
 
 The soft grid around the cursor shows this plane; it is an indicator, not an extra snap grid. **X / Y / Z** after the first point orients the shape plane to **YZ / XZ / XY** in the current reference frame. A three-point circle uses the actual 3D snapped points to determine its plane.
 
-Hover references and construction guides remain available while drawing shapes and offsets. **A** creates a two-point guide; **G** and grid setup commands stay available. Hold **Ctrl** to suspend placement snapping. The snap marker stays on the target even when the shape needs a projection onto its plane.
+Construction guides and temporary reference points remain available while drawing shapes and offsets. **A** creates a two-point guide; **G** and grid setup commands stay available. Hold **Ctrl** to suspend placement snapping. The snap marker stays on the target even when the shape needs a projection onto its plane.
 
 ## Offset edges
 

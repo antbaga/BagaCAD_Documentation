@@ -28,9 +28,9 @@ Place a start point, then add segments. On a face, hold Ctrl when clicking to dr
 
 A typed length fixes distance while the direction follows the mouse. A typed angle fixes the angle while the length changes. Enter both to fix both. Tab alone selects a field without locking it.
 
-Drawing snapping is on by default. Hold Ctrl to disable it; release Ctrl to restore it. Explicit axis/plane locks and typed dimensions stay active without Ctrl. Hovering can still acquire construction guides and temporary references.
+Drawing snapping is on by default. Hold Ctrl to disable it; release Ctrl to restore it. Axis/plane locks and typed values still apply while Ctrl is held.
 
-Snap targets include vertices, midpoints, edges, faces, construction guides and grid nodes. With a fixed length, any snap target can choose the direction; the segment keeps its entered length. Displayed measurements follow the scene units. Drawing input uses Blender units; angles use degrees.
+Snap targets include vertices, midpoints, edges, faces, construction guides, temporary reference points and grid nodes ([Guides & grid](guides-grid.md)). With a fixed length, any snap target can choose the direction; the segment keeps its entered length. Displayed measurements follow the scene units. Drawing input uses Blender units; angles use degrees.
 
 In empty space without a snap, grid plane or explicit constraint, the first point uses a view-parallel plane through the 3D cursor. Each following segment uses a view-parallel plane through its starting point instead.
 
